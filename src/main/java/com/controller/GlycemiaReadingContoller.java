@@ -1,4 +1,4 @@
-package com.contoller;
+package com.controller;
 
 import com.model.GlycemiaReading;
 import com.services.GlycemiaReadingService;
@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping("")
+@RequestMapping("/")
 public class GlycemiaReadingContoller {
 
     private final GlycemiaReadingService service;
@@ -20,28 +20,33 @@ public class GlycemiaReadingContoller {
         this.service = service;
     }
 
+    @GetMapping("/")
+    public String index(Model model) {
+        return "index";
+    }
+
+    @GetMapping("/registration-list")
+    public String getAllReadings(Model model) {
+        List<GlycemiaReading> readings = service.getAllReadings();
+        model.addAttribute("readings", readings);
+        return "registration-list";
+    }
+
     @GetMapping("/add")
     public String addReadingForm(Model model) {
         model.addAttribute("reading", new GlycemiaReading());
         return "add-reading-form";
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public String addReadingSubmit(@ModelAttribute GlycemiaReading reading) {
         service.addReading(reading);
-        return "index";
+        return "registration-list";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteReading(@PathVariable long id) {
         service.deleteReading(id);
-        return "";
+        return "registration-list";
     }
-
-    @GetMapping
-    public String getAllReadings() {
-        List<GlycemiaReading> readings = service.getAllReadings();
-        return "";
-    }
-
 }
