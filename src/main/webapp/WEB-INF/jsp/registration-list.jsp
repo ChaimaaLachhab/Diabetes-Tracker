@@ -11,13 +11,24 @@
 <a href="${pageContext.request.contextPath}/add">Add register</a>
 
 <h1>Glycemia Readings</h1>
+
+
 <div>
     <canvas id="myChart"></canvas>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const readings = JSON.parse('${readingsJson}');
+        const readings = [
+            <c:forEach var="entry" items="${readingMap}">
+            {
+                date: '${entry.key}',
+                level: ${entry.value != null ? entry.value : 0}
+            }<c:if test="${!entryStatus.last}">,</c:if>
+            </c:forEach>
+        ];
 
         const labels = readings.map(reading => reading.date);
         const data = readings.map(reading => reading.level);
