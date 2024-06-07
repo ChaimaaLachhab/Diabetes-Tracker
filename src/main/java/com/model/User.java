@@ -106,4 +106,19 @@ public class User {
     public void setChronicDiseases(String chronicDiseases) {
         this.chronicDiseases = chronicDiseases;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", weight=" + weight +
+                ", height=" + height +
+                ", bloodType='" + bloodType + '\'' +
+                ", allergies='" + allergies + '\'' +
+                ", chronicDiseases='" + chronicDiseases + '\'' +
+                '}';
+    }
 }

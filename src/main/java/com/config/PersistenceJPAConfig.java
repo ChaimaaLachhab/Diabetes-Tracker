@@ -17,7 +17,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "com.repositry")
+@EnableJpaRepositories(basePackages = "com.repository")
 public class PersistenceJPAConfig {
 
     @Bean

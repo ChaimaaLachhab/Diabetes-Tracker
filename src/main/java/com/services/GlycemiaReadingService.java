@@ -2,7 +2,7 @@ package com.services;
 
 import com.exception.GlycemiaReadingException;
 import com.model.GlycemiaReading;
-import com.repositry.GlycemiaReadingRepository;
+import com.repository.GlycemiaReadingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

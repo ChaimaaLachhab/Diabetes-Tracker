@@ -7,6 +7,8 @@
 
 <h1>welcom to our app</h1>
 
+<a href="${pageContext.request.contextPath}/blogs/">Our Blogs</a>
+
 <a href="${pageContext.request.contextPath}/user/register">Add your informations</a>
 
 <a href="${pageContext.request.contextPath}/registration-list">Your Registration</a>
