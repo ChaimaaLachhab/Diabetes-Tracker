@@ -70,9 +70,9 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 ### Exemple de configuration :
 
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/diabetes_tracker_db?serverTimezone=UTC
-spring.datasource.username=votre_nom_utilisateur_mysql
-spring.datasource.password=votre_mot_de_passe_mysql
+dataSource.setUrl("jdbc:mysql://localhost:3306/glycemia_db?createDatabaseIfNotExist=true");
+dataSource.setUsername( "votre_nom_utilisateur_mysql" );
+dataSource.setPassword( "votre_mot_de_passe_mysql" );
 ````
 Lancez le projet en utilisant votre IDE ou en construisant le projet avec Maven et en le déployant sur un serveur Tomcat 
 
