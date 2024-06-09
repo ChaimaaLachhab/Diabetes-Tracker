@@ -65,7 +65,7 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 1. Clonez ce dépôt sur votre machine locale.
 2. Importez le projet dans votre IDE.
 3. Configurez votre base de données MySQL en créant une nouvelle base de données nommée `diabetes_tracker_db`.
-4. Modifiez le fichier `application.properties` dans `src/main/resources` pour correspondre à votre configuration MySQL.
+4. Modifiez le fichier `PersistenceJPAConfig` dans `src/main/java/com/config` pour correspondre à votre configuration MySQL.
 
 ### Exemple de configuration :
 
