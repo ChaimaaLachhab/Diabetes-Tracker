@@ -1,6 +1,7 @@
 package com.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -16,9 +17,6 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "password")
-    private String password;
-
     @Column(name = "weight")
     private Double weight;
 
@@ -33,6 +31,15 @@ public class User {
 
     @Column(name = "chronic_diseases")
     private String chronicDiseases;
+
+    @OneToMany(mappedBy = "user")
+    private List<GlycemiaReading> glycemiaReadings;
+
+    @OneToMany(mappedBy = "user")
+    private List<Food> foods;
+
+    @OneToMany(mappedBy = "user")
+    private List<Blog> blogs;
 
     // Getters and Setters
     public long getId() {
@@ -57,14 +64,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public Double getWeight() {
@@ -107,13 +106,36 @@ public class User {
         this.chronicDiseases = chronicDiseases;
     }
 
+    public List<GlycemiaReading> getGlycemiaReadings() {
+        return glycemiaReadings;
+    }
+
+    public void setGlycemiaReadings(List<GlycemiaReading> glycemiaReadings) {
+        this.glycemiaReadings = glycemiaReadings;
+    }
+
+    public List<Food> getFoods() {
+        return foods;
+    }
+
+    public void setFoods(List<Food> foods) {
+        this.foods = foods;
+    }
+
+    public List<Blog> getBlogs() {
+        return blogs;
+    }
+
+    public void setBlogs(List<Blog> blogs) {
+        this.blogs = blogs;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
                 ", weight=" + weight +
                 ", height=" + height +
                 ", bloodType='" + bloodType + '\'' +

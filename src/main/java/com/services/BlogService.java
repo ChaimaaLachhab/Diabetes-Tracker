@@ -21,10 +21,6 @@ public class BlogService {
         return blogRepository.findAll();
     }
 
-    public Blog getBlogById(long id) {
-        return blogRepository.findById(id).orElse(null);
-    }
-
     public void addBlog(Blog blog) {
         blogRepository.save(blog);
     }

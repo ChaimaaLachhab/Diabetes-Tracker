@@ -11,7 +11,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/foods")
-public class FoodController {
+public class gFoodController {
 
     private final FoodService foodService;
 

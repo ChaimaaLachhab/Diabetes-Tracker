@@ -23,6 +23,10 @@ public class Blog {
     @Column(name = "created_at")
     private LocalDate createdAt;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     // Constructors, Getters, and Setters
     public Blog() {}
 

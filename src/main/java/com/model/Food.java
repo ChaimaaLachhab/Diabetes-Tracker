@@ -25,6 +25,10 @@ public class Food {
     @Column(name = "blood_glucose_level")
     private double bloodGlucoseLevel; // glucose sanguin après avoir consommé ce repas
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     // Constructeurs, getters et setters
     public Food() {
     }

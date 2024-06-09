@@ -21,10 +21,6 @@ public class FoodService {
         return foodRepository.findAll();
     }
 
-    public Food getFoodById(long id) {
-        return foodRepository.findById(id).orElse(null);
-    }
-
     public void addFood(Food food) {
         foodRepository.save(food);
     }
